@@ -19,7 +19,6 @@
     "firebase-admin": "^11.10.1",
     "ts-node-dev": "^2.0.0"
   },
-  "type": "commonjs",
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "typescript": "^5.2.2"
