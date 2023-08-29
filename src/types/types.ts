@@ -1,4 +1,4 @@
-export interface Coffe {
+export interface ICoffe {
   title: String;
   description: String;
   price: String;

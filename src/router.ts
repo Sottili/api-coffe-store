@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 import Coffee from "./models/coffe";
 import { Admin } from "./firebase";
-import { Coffe } from "./types/types";
+import { ICoffe } from "./types/types";
 
 const router = Router();
 const db = Admin.firestore();
@@ -18,7 +18,7 @@ export default router
     }
   })
   .post("/", async (req: Request, res: Response) => {
-    const data: Coffe = {
+    const data: ICoffe = {
       title: req.body.title || "",
       description: req.body.description || "",
       price: req.body.price || "",

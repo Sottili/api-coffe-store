@@ -1,4 +1,4 @@
-import { Coffe } from "../types/types";
+import { ICoffe } from "../types/types";
 
 class Coffee {
   db: any;
@@ -22,7 +22,7 @@ class Coffee {
     return coffees;
   }
 
-  async createCoffee(coffe: Coffe) {
+  async createCoffee(coffe: ICoffe) {
     const coffeeData = {
       title: coffe.title,
       description: coffe.description,
