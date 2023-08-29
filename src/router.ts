@@ -22,7 +22,7 @@ export default router
       title: req.body.title || "",
       description: req.body.description || "",
       price: req.body.price || "",
-      categories: req.body.categories ? req.body.categories.split(",") : [],
+      categories: req.body.categories,
       photo_url: req.body.photo_url || "",
     };
     try {
