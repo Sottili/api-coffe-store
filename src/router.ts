@@ -36,19 +36,28 @@ export default router
     } catch (error) {
       res.status(500).send(error?.toString());
     }
-  }).get("/delivery-items", async (req: Request, res: Response) => {
+  })
+  .get("/delivery-items", async (req: Request, res: Response) => {
     try {
       const deliveryItems = await deliveryItemInstance.getDeliveryItems();
       res.json(deliveryItems);
     } catch (error) {
       res.status(500).send(error?.toString());
     }
-  }).post("/delivery-items", async (req: Request, res: Response) => {
-    const data: IDeliveryItem = req.body;
-
+  })
+  .post("/delivery-items", async (req: Request, res: Response) => {
+    const data: IDeliveryItem = {
+      title: req.body.title || "",
+      description: req.body.description || "",
+      price: req.body.price || "",
+      categories: req.body.categories,
+      photo_url: req.body.photo_url || "",
+    };
     try {
       await deliveryItemInstance.createDeliveryItem(data);
-      res.status(201).json({ message: "Item de entrega cadastrado com sucesso!" });
+      res
+        .status(201)
+        .json({ message: "Item de entrega cadastrado com sucesso!" });
     } catch (error) {
       res.status(500).send(error?.toString());
     }
