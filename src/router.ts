@@ -5,7 +5,6 @@ import Coffee from "./models/coffe";
 import DeliveryItem from "./models/deliveryItem";
 
 import { ICoffe } from "./types/types";
-import { IDeliveryItem } from "./types/types";
 
 const router = Router();
 const db = Admin.firestore();
@@ -23,13 +22,7 @@ export default router
     }
   })
   .post("/", async (req: Request, res: Response) => {
-    const data: ICoffe = {
-      title: req.body.title || "",
-      description: req.body.description || "",
-      price: req.body.price || "",
-      categories: req.body.categories,
-      photo_url: req.body.photo_url || "",
-    };
+    const data: ICoffe = req.body;
     try {
       await coffeeInstance.createCoffee(data);
       res.status(200).send("Café cadastrado com sucesso!");
@@ -46,13 +39,7 @@ export default router
     }
   })
   .post("/delivery-items", async (req: Request, res: Response) => {
-    const data: IDeliveryItem = {
-      title: req.body.title || "",
-      description: req.body.description || "",
-      price: req.body.price || "",
-      categories: req.body.categories,
-      photo_url: req.body.photo_url || "",
-    };
+    const data: ICoffe = req.body;
     try {
       await deliveryItemInstance.createDeliveryItem(data);
       res

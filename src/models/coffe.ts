@@ -12,6 +12,7 @@ class Coffee {
     const snapshot = await usersRef.get();
 
     let coffees: String[] = [];
+
     snapshot.forEach((doc: any) => {
       coffees.push({
         id: doc.id,

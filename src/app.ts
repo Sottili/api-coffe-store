@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/coffees", router);
+app.use("/", router);
 
 app.listen(port, () => {
   console.log(`O app está rodando em http://localhost:${port}`);
