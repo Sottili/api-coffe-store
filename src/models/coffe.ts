@@ -8,11 +8,16 @@ class Coffee {
   }
 
   async getCoffees() {
+    // Referência da collection
     const usersRef = this.db.collection("coffees");
+
+    //Query no banco
     const snapshot = await usersRef.get();
 
+    // Array tipado que vai receber a resposta da query
     let coffees: String[] = [];
 
+    // Foreach passando por todos os itens da query e adicionando um por um no array que vai recebê-los
     snapshot.forEach((doc: any) => {
       coffees.push({
         id: doc.id,
@@ -20,21 +25,16 @@ class Coffee {
       });
     });
 
+    // Return dos itens
     return coffees;
   }
 
   async createCoffee(coffe: ICoffe) {
-    const coffeeData = {
-      title: coffe.title,
-      description: coffe.description,
-      price: coffe.price,
-      categories: coffe.categories,
-      photo_url: coffe.photo_url,
-    };
-
     try {
+      // Referência da collection
       const coffeeRef = this.db.collection("coffees");
-      await coffeeRef.add(coffeeData);
+      // Criação do café na collection
+      await coffeeRef.add(coffe);
     } catch (error) {
       console.error("Erro ao cadastrar café:", error);
       throw error;
