@@ -1,6 +1,6 @@
 # Backend aplicação Coffe-Store
 
-## O Bakckend da aplicação foi desenvolvido utilizando:
+## O Backend da aplicação foi desenvolvido utilizando:
 
 - NodeJS
 - Express
