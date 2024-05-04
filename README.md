@@ -41,7 +41,7 @@ npm run dev (to execute this project)
 
 <h2 id="routes">📍 API Endpoints</h2>
 
-Here you can list the main routes of your API, and what are their expected request bodies.
+Main routes of API, and what are their expected request bodies.
 ​
 | route               | description                                          
 |----------------------|-----------------------------------------------------
